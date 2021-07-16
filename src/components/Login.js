@@ -127,7 +127,7 @@ const Hero = styled.div`
     top: -10px;
     @media (max-width: 768px) {
       top: 230px;
-      width: initial;
+      width: 500px;
       position: static;
       height: initial;
     }
