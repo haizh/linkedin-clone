@@ -18,7 +18,7 @@ function Login() {
         <Hero>
           <h1>Welcome to your professional community</h1>
           <Form />
-          <img src="/images/img-hero.svg" alt="hero" />
+          {/* <img src="/images/img-hero.svg" alt="hero" className="hero" /> */}
         </Hero>
       </Section>
     </Container>
@@ -117,7 +117,7 @@ const Hero = styled.div`
     }
   }
 
-  img {
+  .hero {
     /* z-index: -1; */
     width: 700px;
     height: 670px;

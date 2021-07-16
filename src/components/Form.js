@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -8,6 +9,7 @@ function Form() {
       <input type="text" name="" id="" placeholder="Email or phone number" />
       <input type="password" name="" id="" placeholder="password" />
       <button
+        className="show-btn"
         onClick={(e) => {
           e.preventDefault();
           setShow(!show);
@@ -16,11 +18,20 @@ function Form() {
         {show === true ? "Show" : "Hide"}
       </button>
       <a href="#">Forgot Password?</a>
+      <Buttons primary>Sign In</Buttons>
+      <Buttons>
+        <img
+          src="/images/google.svg"
+          alt="google sign-in"
+          className="google-sign-in"
+        />
+        Sign In with Google
+      </Buttons>
     </FormInput>
   );
 }
 
-const FormInput = styled.form`
+const FormInput = styled.div`
   display: flex;
   width: 500px;
   margin-top: 20px;
@@ -56,7 +67,7 @@ const FormInput = styled.form`
     transition-duration: 180ms;
   }
 
-  & > button {
+  .show-btn {
     width: 50px;
     margin-top: -45px;
     margin-left: 350px;
@@ -68,7 +79,7 @@ const FormInput = styled.form`
     padding: 5px;
   }
 
-  button:hover {
+  .show-btn:hover {
     background-color: rgba(0, 0, 0, 0.08);
     transition-duration: 200ms;
   }
@@ -76,7 +87,7 @@ const FormInput = styled.form`
   a {
     text-decoration: none;
     color: gray;
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   a:hover {
@@ -86,6 +97,37 @@ const FormInput = styled.form`
 
   @media (max-width: 768px) {
     align-items: center;
+  }
+`;
+
+const Buttons = styled.button`
+  width: 100%;
+  max-width: 425px;
+  height: 48px;
+  margin: 5px 0;
+  position: relative;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  transition: 180ms;
+  cursor: pointer;
+  border: ${(props) => (props.primary ? "none" : "1px solid rgba(0,0,0,0.6)")};
+  border-radius: 20px;
+  background: ${(props) => (props.primary ? "#0073b1;" : "white")};
+  color: ${(props) => (props.primary ? "white" : "gray")};
+
+  &:hover {
+    background: ${(props) => (props.primary ? "#004182" : "rgba(0,0,0,0.2)")};
+    border: ${(props) =>
+      props.primary ? "null" : "1px solid rgba(0,0,0,0.9)"};
+    color: ${(props) => (props.primary ? "null" : "initial")};
+    transition: 180ms;
+  }
+
+  .google-sign-in {
+    position: absolute;
+    left: 70px;
+    top: 10px;
   }
 `;
 
