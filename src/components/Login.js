@@ -18,7 +18,7 @@ function Login() {
         <Hero>
           <h1>Welcome to your professional community</h1>
           <Form />
-          {/* <img src="/images/img-hero.svg" alt="hero" className="hero" /> */}
+          <img src="/images/img-hero.svg" alt="hero" className="hero" />
         </Hero>
       </Section>
     </Container>
@@ -102,6 +102,7 @@ const Section = styled.section`
 
 const Hero = styled.div`
   width: 100%;
+  /* border: 2px solid red; */
   h1 {
     padding-bottom: 0;
     width: 55%;
@@ -111,7 +112,7 @@ const Hero = styled.div`
     line-height: 70px;
     @media (max-width: 768px) {
       text-align: center;
-      font-size: 20px;
+      font-size: 25px;
       width: 100%;
       line-height: 2;
     }
