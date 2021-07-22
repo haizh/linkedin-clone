@@ -1,0 +1,3 @@
+pending task
+
+1. Disable button on click functionality for carousel slider
