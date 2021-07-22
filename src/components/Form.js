@@ -88,7 +88,6 @@ const FormInput = styled.div`
     text-decoration: none;
     color: gray;
     margin: 20px 0;
-    border: 2px solid red;
   }
 
   a:hover {

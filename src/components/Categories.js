@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 function Categories() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   return (
     <>
       <Container>
@@ -12,79 +12,38 @@ function Categories() {
           <Div>
             <p className="box-title">SUGGESTED SEARCHES</p>
             <List>
-              <a className="category-link" href="">
-                Engineering
-              </a>
-              <a className="category-link" href="">
-                Business Development
-              </a>
-              <a className="category-link" href="">
-                Finance
-              </a>
-              <a className="category-link" href="">
-                Administrative Assistant
-              </a>
-              <a className="category-link" href="">
-                Retail Associate
-              </a>
-              <a className="category-link" href="">
-                Customer Service
-              </a>
-              <a className="category-link" href="">
-                Operations
-              </a>
-              <a className="category-link" href="">
-                Information Technology
-              </a>
-              <a className="category-link" href="">
-                Marketing
-              </a>
-              <a className="category-link" href="">
-                Human Resource
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Healthcare Service
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Program and Project Management
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Sales
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Accounting
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Arts and Design
-              </a>
-
-              <a className={`category-link ${show && "hide-link"}`}>
-                Community and Social Services
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Consulting
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Education
-              </a>
-              <a className={`category-link ${show && "hide-link"}`} href="">
-                Entrepreneurship
-              </a>
-
-              <a className={`category-link ${show && "hide-link"}`}>
-                Media and Communications
-              </a>
+              <Links>Engineering</Links>
+              <Links>Business Development</Links>
+              <Links>Administrative Assistant</Links>
+              <Links>Retail Associate</Links>
+              <Links>Customer Service</Links>
+              <Links>Operations</Links>
+              <Links>Information Technology</Links>
+              <Links>Marketing</Links>
+              <Links>Human Resource</Links>
+              <Links>Healthcare Swervices</Links>
+              <Links>Program and Project Management</Links>
+              {show && <HiddenLinks>Sales</HiddenLinks>}
+              {show && <HiddenLinks>Accounting</HiddenLinks>}
+              {show && <HiddenLinks>Consulting</HiddenLinks>}
+              {show && <HiddenLinks>Education</HiddenLinks>}
+              {show && <HiddenLinks>Arts and Design</HiddenLinks>}
+              {show && <HiddenLinks>Entrepreneurship</HiddenLinks>}
+              {show && (
+                <HiddenLinks> Community and Social Services</HiddenLinks>
+              )}
+              {show && <HiddenLinks> Media and Communications</HiddenLinks>}
               <button
-                className={`toggle-btn ${!show && "btn-shift"}`}
+                className={`toggle-btn ${show && "btn-shift"}`}
                 onClick={() => setShow(!show)}
               >
                 {show ? (
                   <p>
-                    Show more <FiChevronDown />
+                    Show less <FiChevronDown />
                   </p>
                 ) : (
                   <p>
-                    Show less <FiChevronUp />
+                    Show more <FiChevronUp />
                   </p>
                 )}
               </button>
@@ -93,12 +52,10 @@ function Categories() {
         </Section>
       </Container>
       <Container primary>
-        <div className="job-post">
-          <h2 className="post-text">
-            Post your job and find the people you need
-          </h2>
+        <Section primary>
+          <h2 primary>Post your job and find the people you need</h2>
           <Post>Post a job</Post>
-        </div>
+        </Section>
       </Container>
     </>
   );
@@ -108,7 +65,6 @@ const Container = styled.div`
   padding: 0;
   width: 100%;
   height: auto;
-  /* background-color: #faf9f7; */
   background-color: ${(props) => (props.primary ? "#F1ECE5" : "#faf9f7")};
 `;
 
@@ -118,13 +74,14 @@ const Section = styled.section`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  align-items: ${(props) => (props.primary ? "baseline" : "initial")};
   padding: ${(props) => (props.primary ? "50px 0" : "200px 0px")};
 
   h2 {
-    font-size: 48px;
-    color: rgba(0, 0, 0, 0.9);
-    line-height: 60px;
-    font-weight: 200;
+    font-size: ${(props) => (props.primary ? "40px" : "48px")};
+    color: ${(props) => (props.primary ? "#b24020" : "rgba(0, 0, 0, 0.9)")};
+    line-height: ${(props) => (props.primary ? "50px" : "60px")};
+    font-weight: ${(props) => (props.primary ? "400" : "200")};
     width: 35%;
     margin-right: 70px;
   }
@@ -167,20 +124,50 @@ const List = styled.div`
 
   .toggle-btn {
     position: absolute;
-    top: 17rem;
+    top: 20rem;
     left: 15px;
     color: rgba(0, 0, 0, 0.796);
     line-height: 40px;
     font-size: 16px;
     font-weight: 600;
     border: none;
+    cursor: pointer;
   }
 
   .btn-shift {
     top: 32rem;
   }
+`;
 
-  & > a:hover {
+const Links = styled.a`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.796);
+  border-radius: 25px;
+  background-color: #e6e5e4;
+  padding: 12px 20px;
+  margin: 5px;
+
+  &:hover {
+    background-color: #999999;
+    transition: all linear 190ms;
+    text-decoration: underline;
+  }
+`;
+const HiddenLinks = styled.a`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.796);
+  border-radius: 25px;
+  background-color: #e6e5e4;
+  padding: 12px 20px;
+  margin: 5px;
+
+  &:hover {
     background-color: #999999;
     transition: all linear 190ms;
     text-decoration: underline;
@@ -189,6 +176,6 @@ const List = styled.div`
 
 const Post = styled.a`
   background-color: #e6e5e4;
-  padding-bottom: 0px !important;
+  padding: 12px 20px;
 `;
 export default Categories;
