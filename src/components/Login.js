@@ -1,27 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import Form from "./Form";
+import Categories from "./Categories";
 
 function Login() {
   return (
-    <Container>
-      <Nav>
-        <a href="/">
-          <img src="/images/login-logo.svg" alt="linkedin" />
-        </a>
-        <div>
-          <Join>Join now</Join>
-          <SignIn>Sign In</SignIn>
-        </div>
-      </Nav>
-      <Section>
-        <Hero>
-          <h1>Welcome to your professional community</h1>
-          <Form />
-          <img src="/images/img-hero.svg" alt="hero" className="hero" />
-        </Hero>
-      </Section>
-    </Container>
+    <>
+      <Container>
+        <Nav>
+          <a href="/">
+            <img src="/images/login-logo.svg" alt="linkedin" />
+          </a>
+          <div>
+            <Join>Join now</Join>
+            <SignIn>Sign In</SignIn>
+          </div>
+        </Nav>
+        <Section>
+          <Hero>
+            <h1>Welcome to your professional community</h1>
+            <Form />
+            <img src="/images/img-hero.svg" alt="hero" className="hero" />
+          </Hero>
+        </Section>
+      </Container>
+      <Categories />
+    </>
   );
 }
 
@@ -83,10 +87,10 @@ const SignIn = styled.a`
 const Section = styled.section`
   display: flex;
   align-content: start;
-  min-height: 700px;
-  padding-bottom: 138px;
+  min-height: 500px;
+  /* padding-bottom: 138px; */
   padding-top: 40px;
-  padding: 60px 0;
+  /* padding: 60px 0; */
   position: relative;
   flex-wrap: wrap;
   width: 100%;
