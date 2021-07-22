@@ -5,65 +5,69 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 function Categories() {
   const [show, setShow] = useState(false);
   return (
-    <>
-      <Container>
-        <Section>
-          <h2>Find open jobs and internships</h2>
-          <Div>
-            <p className="box-title">SUGGESTED SEARCHES</p>
-            <List>
-              <Links>Engineering</Links>
-              <Links>Business Development</Links>
-              <Links>Administrative Assistant</Links>
-              <Links>Retail Associate</Links>
-              <Links>Customer Service</Links>
-              <Links>Operations</Links>
-              <Links>Information Technology</Links>
-              <Links>Marketing</Links>
-              <Links>Human Resource</Links>
-              <Links>Healthcare Swervices</Links>
-              <Links>Program and Project Management</Links>
-              {show && <Links>Sales</Links>}
-              {show && <Links>Accounting</Links>}
-              {show && <Links>Consulting</Links>}
-              {show && <Links>Education</Links>}
-              {show && <Links>Arts and Design</Links>}
-              {show && <Links>Entrepreneurship</Links>}
-              {show && <Links> Community and Social Services</Links>}
-              {show && <Links> Media and Communications</Links>}
-              <button
-                className={`toggle-btn ${show && "btn-shift"}`}
-                onClick={() => setShow(!show)}
-              >
-                {show ? (
-                  <p>
-                    Show less <FiChevronDown />
-                  </p>
-                ) : (
-                  <p>
-                    Show more <FiChevronUp />
-                  </p>
-                )}
-              </button>
-            </List>
-          </Div>
-        </Section>
-      </Container>
-      <Container primary>
+    <Container>
+      <Section>
+        <h2>Find open jobs and internships</h2>
+        <Div>
+          <p className="box-title">SUGGESTED SEARCHES</p>
+          <List>
+            <Links>Engineering</Links>
+            <Links>Business Development</Links>
+            <Links>Administrative Assistant</Links>
+            <Links>Retail Associate</Links>
+            <Links>Customer Service</Links>
+            <Links>Operations</Links>
+            <Links>Information Technology</Links>
+            <Links>Marketing</Links>
+            <Links>Human Resource</Links>
+            <Links>Healthcare Swervices</Links>
+            <Links>Program and Project Management</Links>
+            {show && <Links>Sales</Links>}
+            {show && <Links>Accounting</Links>}
+            {show && <Links>Consulting</Links>}
+            {show && <Links>Education</Links>}
+            {show && <Links>Arts and Design</Links>}
+            {show && <Links>Entrepreneurship</Links>}
+            {show && <Links> Community and Social Services</Links>}
+            {show && <Links> Media and Communications</Links>}
+            <button
+              className={`toggle-btn ${show && "btn-shift"}`}
+              onClick={() => setShow(!show)}
+            >
+              {show ? (
+                <p>
+                  Show less <FiChevronDown />
+                </p>
+              ) : (
+                <p>
+                  Show more <FiChevronUp />
+                </p>
+              )}
+            </button>
+          </List>
+        </Div>
+      </Section>
+      <SubContainer>
         <Section primary>
           <h2 primary>Post your job and find the people you need</h2>
           <Links primary>Post a job</Links>
         </Section>
-      </Container>
-    </>
+      </SubContainer>
+    </Container>
   );
 }
 
-const Container = styled.div`
+const Container = styled.section`
   padding: 0;
   width: 100%;
   height: auto;
   background-color: ${(props) => (props.primary ? "#F1ECE5" : "#faf9f7")};
+`;
+
+const SubContainer = styled.div`
+  width: 100%;
+  height: auto;
+  background-color: #f1ece5;
 `;
 
 const Section = styled.section`
@@ -126,6 +130,7 @@ const Links = styled.a`
   font-weight: 600;
   line-height: 28px;
   text-decoration: none;
+  cursor: pointer;
   color: rgba(0, 0, 0, 0.796);
   border-radius: 25px;
   background-color: ${(props) => (props.primary ? "transparent" : "#e6e5e4")};
