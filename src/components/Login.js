@@ -8,7 +8,7 @@ function Login() {
     <>
       <Container>
         <Nav>
-          <a href="/">
+          <a className="logo" href="/">
             <img src="/images/login-logo.svg" alt="linkedin" />
           </a>
           <div>
@@ -42,7 +42,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   flex-wrap: nowrap;
 
-  & > a {
+  .logo {
     width: 135px;
     height: 34px;
     @media (max-width: 768px) {

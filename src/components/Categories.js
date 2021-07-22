@@ -5,93 +5,102 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 function Categories() {
   const [show, setShow] = useState(true);
   return (
-    <Container>
-      <Section>
-        <h2>Find open jobs and internships</h2>
-        <Div>
-          <p className="box-title">SUGGESTED SEARCHES</p>
-          <Links>
-            <a className="category-link" href="">
-              Engineering
-            </a>
-            <a className="category-link" href="">
-              Business Development
-            </a>
-            <a className="category-link" href="">
-              Finance
-            </a>
-            <a className="category-link" href="">
-              Administrative Assistant
-            </a>
-            <a className="category-link" href="">
-              Retail Associate
-            </a>
-            <a className="category-link" href="">
-              Customer Service
-            </a>
-            <a className="category-link" href="">
-              Operations
-            </a>
-            <a className="category-link" href="">
-              Information Technology
-            </a>
-            <a className="category-link" href="">
-              Marketing
-            </a>
-            <a className="category-link" href="">
-              Human Resource
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Healthcare Service
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Program and Project Management
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Sales
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Accounting
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Arts and Design
-            </a>
+    <>
+      <Container>
+        <Section>
+          <h2>Find open jobs and internships</h2>
+          <Div>
+            <p className="box-title">SUGGESTED SEARCHES</p>
+            <List>
+              <a className="category-link" href="">
+                Engineering
+              </a>
+              <a className="category-link" href="">
+                Business Development
+              </a>
+              <a className="category-link" href="">
+                Finance
+              </a>
+              <a className="category-link" href="">
+                Administrative Assistant
+              </a>
+              <a className="category-link" href="">
+                Retail Associate
+              </a>
+              <a className="category-link" href="">
+                Customer Service
+              </a>
+              <a className="category-link" href="">
+                Operations
+              </a>
+              <a className="category-link" href="">
+                Information Technology
+              </a>
+              <a className="category-link" href="">
+                Marketing
+              </a>
+              <a className="category-link" href="">
+                Human Resource
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Healthcare Service
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Program and Project Management
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Sales
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Accounting
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Arts and Design
+              </a>
 
-            <a className={`category-link ${show && "hide-link"}`}>
-              Community and Social Services
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Consulting
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Education
-            </a>
-            <a className={`category-link ${show && "hide-link"}`} href="">
-              Entrepreneurship
-            </a>
+              <a className={`category-link ${show && "hide-link"}`}>
+                Community and Social Services
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Consulting
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Education
+              </a>
+              <a className={`category-link ${show && "hide-link"}`} href="">
+                Entrepreneurship
+              </a>
 
-            <a className={`category-link ${show && "hide-link"}`}>
-              Media and Communications
-            </a>
-            <button
-              className={`toggle-btn ${!show && "btn-shift"}`}
-              onClick={() => setShow(!show)}
-            >
-              {/* {show ? "Show more" : "Show less"} */}
-              {show ? (
-                <p>
-                  Show more <FiChevronDown />
-                </p>
-              ) : (
-                <p>
-                  Show less <FiChevronUp />
-                </p>
-              )}
-            </button>
-          </Links>
-        </Div>
-      </Section>
-    </Container>
+              <a className={`category-link ${show && "hide-link"}`}>
+                Media and Communications
+              </a>
+              <button
+                className={`toggle-btn ${!show && "btn-shift"}`}
+                onClick={() => setShow(!show)}
+              >
+                {show ? (
+                  <p>
+                    Show more <FiChevronDown />
+                  </p>
+                ) : (
+                  <p>
+                    Show less <FiChevronUp />
+                  </p>
+                )}
+              </button>
+            </List>
+          </Div>
+        </Section>
+      </Container>
+      <Container primary>
+        <div className="job-post">
+          <h2 className="post-text">
+            Post your job and find the people you need
+          </h2>
+          <Post>Post a job</Post>
+        </div>
+      </Container>
+    </>
   );
 }
 
@@ -99,7 +108,8 @@ const Container = styled.div`
   padding: 0;
   width: 100%;
   height: auto;
-  background-color: #faf9f7;
+  /* background-color: #faf9f7; */
+  background-color: ${(props) => (props.primary ? "#F1ECE5" : "#faf9f7")};
 `;
 
 const Section = styled.section`
@@ -108,7 +118,7 @@ const Section = styled.section`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 200px 0;
+  padding: ${(props) => (props.primary ? "50px 0" : "200px 0px")};
 
   h2 {
     font-size: 48px;
@@ -133,7 +143,7 @@ const Div = styled.div`
   }
 `;
 
-const Links = styled.div`
+const List = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -175,5 +185,10 @@ const Links = styled.div`
     transition: all linear 190ms;
     text-decoration: underline;
   }
+`;
+
+const Post = styled.a`
+  background-color: #e6e5e4;
+  padding-bottom: 0px !important;
 `;
 export default Categories;
