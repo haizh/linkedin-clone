@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Form from "./Form";
 import Categories from "./Categories";
+import Carousel from "./Carousel";
 
 function Login() {
   return (
@@ -25,6 +26,7 @@ function Login() {
         </Section>
       </Container>
       <Categories />
+      <Carousel />
     </>
   );
 }

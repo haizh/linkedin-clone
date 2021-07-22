@@ -77,7 +77,7 @@ const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-items: ${(props) => (props.primary ? "baseline" : "initial")};
-  padding: ${(props) => (props.primary ? "50px 0" : "200px 0px")};
+  padding: ${(props) => (props.primary ? "80px 0" : "200px 0px")};
 
   h2 {
     font-size: ${(props) => (props.primary ? "40px" : "48px")};
