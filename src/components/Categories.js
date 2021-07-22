@@ -52,7 +52,7 @@ function Categories() {
       <Container primary>
         <Section primary>
           <h2 primary>Post your job and find the people you need</h2>
-          <Post>Post a job</Post>
+          <Links primary>Post a job</Links>
         </Section>
       </Container>
     </>
@@ -104,22 +104,6 @@ const List = styled.div`
   align-content: flex-start;
   position: relative;
 
-  .category-link {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.796);
-    border-radius: 25px;
-    background-color: #e6e5e4;
-    padding: 12px 20px;
-    margin: 5px;
-  }
-
-  .hide-link {
-    display: none;
-  }
-
   .toggle-btn {
     position: absolute;
     top: 20rem;
@@ -144,19 +128,16 @@ const Links = styled.a`
   text-decoration: none;
   color: rgba(0, 0, 0, 0.796);
   border-radius: 25px;
-  background-color: #e6e5e4;
+  background-color: ${(props) => (props.primary ? "transparent" : "#e6e5e4")};
   padding: 12px 20px;
+  border: ${(props) => (props.primary ? " 1px solid black" : "none")};
   margin: 5px;
 
   &:hover {
-    background-color: #999999;
+    background-color: ${(props) => (props.primary ? "#e6e5e4" : "#888888")};
     transition: all linear 190ms;
     text-decoration: underline;
   }
 `;
 
-const Post = styled.a`
-  background-color: #e6e5e4;
-  padding: 12px 20px;
-`;
 export default Categories;
