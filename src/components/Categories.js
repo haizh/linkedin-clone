@@ -23,16 +23,14 @@ function Categories() {
               <Links>Human Resource</Links>
               <Links>Healthcare Swervices</Links>
               <Links>Program and Project Management</Links>
-              {show && <HiddenLinks>Sales</HiddenLinks>}
-              {show && <HiddenLinks>Accounting</HiddenLinks>}
-              {show && <HiddenLinks>Consulting</HiddenLinks>}
-              {show && <HiddenLinks>Education</HiddenLinks>}
-              {show && <HiddenLinks>Arts and Design</HiddenLinks>}
-              {show && <HiddenLinks>Entrepreneurship</HiddenLinks>}
-              {show && (
-                <HiddenLinks> Community and Social Services</HiddenLinks>
-              )}
-              {show && <HiddenLinks> Media and Communications</HiddenLinks>}
+              {show && <Links>Sales</Links>}
+              {show && <Links>Accounting</Links>}
+              {show && <Links>Consulting</Links>}
+              {show && <Links>Education</Links>}
+              {show && <Links>Arts and Design</Links>}
+              {show && <Links>Entrepreneurship</Links>}
+              {show && <Links> Community and Social Services</Links>}
+              {show && <Links> Media and Communications</Links>}
               <button
                 className={`toggle-btn ${show && "btn-shift"}`}
                 onClick={() => setShow(!show)}
@@ -140,23 +138,6 @@ const List = styled.div`
 `;
 
 const Links = styled.a`
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 28px;
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.796);
-  border-radius: 25px;
-  background-color: #e6e5e4;
-  padding: 12px 20px;
-  margin: 5px;
-
-  &:hover {
-    background-color: #999999;
-    transition: all linear 190ms;
-    text-decoration: underline;
-  }
-`;
-const HiddenLinks = styled.a`
   font-size: 20px;
   font-weight: 600;
   line-height: 28px;
