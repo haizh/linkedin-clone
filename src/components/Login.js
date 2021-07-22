@@ -1,8 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import styled from "styled-components";
 import Form from "./Form";
 import Categories from "./Categories";
-import Carousel from "./Carousel";
+import Lazy from "./Lazy";
+const Carousel = lazy(() => import("./Carousel"));
+// import Carousel from "./Carousel";
 
 function Login() {
   return (
@@ -26,7 +28,9 @@ function Login() {
         </Section>
       </Container>
       <Categories />
-      <Carousel />
+      <Suspense fallback={<Lazy />}>
+        <Carousel />
+      </Suspense>
     </>
   );
 }
