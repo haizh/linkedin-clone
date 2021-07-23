@@ -4,7 +4,6 @@ import Form from "./Form";
 import Categories from "./Categories";
 import Lazy from "./Lazy";
 const Carousel = lazy(() => import("./Carousel"));
-// import Carousel from "./Carousel";
 
 function Login() {
   return (
