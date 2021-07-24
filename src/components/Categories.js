@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import StandardLink from "./StandardLink";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 function Categories() {
@@ -11,25 +12,25 @@ function Categories() {
         <Div>
           <p className="box-title">SUGGESTED SEARCHES</p>
           <List>
-            <Links>Engineering</Links>
-            <Links>Business Development</Links>
-            <Links>Administrative Assistant</Links>
-            <Links>Retail Associate</Links>
-            <Links>Customer Service</Links>
-            <Links>Operations</Links>
-            <Links>Information Technology</Links>
-            <Links>Marketing</Links>
-            <Links>Human Resource</Links>
-            <Links>Healthcare Swervices</Links>
-            <Links>Program and Project Management</Links>
-            {show && <Links>Sales</Links>}
-            {show && <Links>Accounting</Links>}
-            {show && <Links>Consulting</Links>}
-            {show && <Links>Education</Links>}
-            {show && <Links>Arts and Design</Links>}
-            {show && <Links>Entrepreneurship</Links>}
-            {show && <Links> Community and Social Services</Links>}
-            {show && <Links> Media and Communications</Links>}
+            <StandardLink link={"Engineering"} />
+            <StandardLink link={"Business Development"} />
+            <StandardLink link={"Administrative Assistant"} />
+            <StandardLink link={"Retail Associate"} />
+            <StandardLink link={"Customer Service"} />
+            <StandardLink link={"Operations"} />
+            <StandardLink link={"Information Technology"} />
+            <StandardLink link={"Marketing"} />
+            <StandardLink link={"Human Resource"} />
+            <StandardLink link={"Healthcare Services"} />
+            <StandardLink link={"Program and Project Management"} />
+            {show && <StandardLink link={"Sales"} />}
+            {show && <StandardLink link={"Accounting"} />}
+            {show && <StandardLink link={"Consulting"} />}
+            {show && <StandardLink link={"Education"} />}
+            {show && <StandardLink link={"Arts and Design"} />}
+            {show && <StandardLink link={"Entrepreneurship"} />}
+            {show && <StandardLink link={"Community and Social Services"} />}
+            {show && <StandardLink link={"Media and Communications"} />}
             <button
               className={`toggle-btn ${show && "btn-shift"}`}
               onClick={() => setShow(!show)}
@@ -50,7 +51,7 @@ function Categories() {
       <SubContainer>
         <Section primary>
           <h2 primary>Post your job and find the people you need</h2>
-          <Links primary>Post a job</Links>
+          <StandardLink link={"Post a Job"} primary={"primary"} />
         </Section>
       </SubContainer>
     </Container>
@@ -122,26 +123,6 @@ const List = styled.div`
 
   .btn-shift {
     top: 32rem;
-  }
-`;
-
-const Links = styled.a`
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 28px;
-  text-decoration: none;
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.796);
-  border-radius: 25px;
-  background-color: ${(props) => (props.primary ? "transparent" : "#e6e5e4")};
-  padding: 12px 20px;
-  border: ${(props) => (props.primary ? " 1px solid black" : "none")};
-  margin: 5px;
-
-  &:hover {
-    background-color: ${(props) => (props.primary ? "#e6e5e4" : "#888888")};
-    transition: all linear 190ms;
-    text-decoration: underline;
   }
 `;
 
