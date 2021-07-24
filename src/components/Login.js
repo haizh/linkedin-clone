@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import styled from "styled-components";
 import Form from "./Form";
 import Categories from "./Categories";
+import ActionArea from "./ActionArea";
 import Lazy from "./Lazy";
 const Carousel = lazy(() => import("./Carousel"));
 
@@ -30,6 +31,7 @@ function Login() {
       <Suspense fallback={<Lazy />}>
         <Carousel />
       </Suspense>
+      <ActionArea />
     </>
   );
 }
