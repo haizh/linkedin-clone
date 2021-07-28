@@ -1,20 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import people from "../assets/people-one.svg";
+import peopleTwo from "../assets/people-two.svg";
+import StandardLink from "./StandardLink";
 
 function ActionArea() {
   return (
     <Container>
       <ActionCard>
-        <h2>Connect with people</h2>
-        <h2>Connect with people</h2>
-        <p>find people you know</p>
-        <p>find people you know</p>
+        <img src={people} alt="people" className="people-img" />
+        <Div>
+          <h2>Connect with people who can help</h2>
+          <StandardLink link={"Find People you Know"} primary={"primary"} />
+        </Div>
       </ActionCard>
       <ActionCard>
-        <h2>Connect with people</h2>
-        <h2>Connect with people</h2>
-        <p>find people you know</p>
-        <p>find people you know</p>
+        <img src={peopleTwo} alt="people2" className="people-img" />
+        <Div>
+          <h2>Learn the skills that can help you now</h2>
+          <StandardLink link={"Find People you Know"} primary={"primary"} />
+        </Div>
       </ActionCard>
     </Container>
   );
@@ -24,17 +29,49 @@ const Container = styled.section`
   width: 100%;
   max-width: 1124px;
   padding: 0;
-  background-color: black;
+  /* background-color: black; */
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
+  padding: 7rem 0;
 `;
 
 const ActionCard = styled.div`
   position: relative;
-  height: 200px;
-  width: 300px;
+  height: auto;
+  width: 500px;
   margin: 0 10px;
-  background-color: rebeccapurple;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+
+  .people-img {
+    width: 300px;
+    padding-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+  }
+`;
+
+const Div = styled.div`
+  width: inherit;
+  height: auto;
+
+  h2 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 200;
+    color: rgba(0, 0, 0, 0.9);
+    padding-bottom: 3rem;
+  }
 `;
 
 export default ActionArea;
