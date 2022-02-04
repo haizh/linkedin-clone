@@ -19,3 +19,25 @@ export const data = [
     image: carouselThree,
   },
 ];
+
+export const categoryItem = [
+  "Engineering",
+  "Business Development",
+  "Administrative Assistant",
+  "Retail Associate",
+  "Customer Service",
+  "Operations",
+  "Information Technology",
+  "Marketing",
+  "Human Resource",
+  "Healthcare Services",
+  "Program and Project Management",
+  "Sales",
+  "Accounting",
+  "Consulting",
+  "Education",
+  "Arts and Design",
+  "Entrepreneurship",
+  "Community and Social Services",
+  "Media and Communications",
+];

@@ -3,20 +3,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 function Form() {
-  const [show, setShow] = useState(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <FormInput onSubmit>
-      <input type="text" name="" id="" placeholder="Email or phone number" />
-      <input type="password" name="" id="" placeholder="password" />
-      <button
-        className="show-btn"
-        onClick={(e) => {
-          e.preventDefault();
-          setShow(!show);
-        }}
-      >
-        {show === true ? "Show" : "Hide"}
-      </button>
+    <FormInput onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name=""
+        id="name"
+        placeholder="Email or phone number"
+      />
+      <input type="password" name="" id="name" placeholder="password" />
       <a href="#">Forgot Password?</a>
       <Buttons primary>Sign In</Buttons>
       <Buttons>
@@ -36,7 +34,7 @@ const FormInput = styled.div`
   width: 500px;
   margin-top: 20px;
   flex-direction: column;
-  border: 2px solid green;
+  // border: 2px solid green;
 
   & > input {
     max-width: 400px;

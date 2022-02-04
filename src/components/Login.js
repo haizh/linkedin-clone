@@ -20,8 +20,8 @@ function Login() {
           </div>
         </Nav>
         <Section>
+          <h1>Welcome to your professional community</h1>
           <Hero>
-            <h1>Welcome to your professional community</h1>
             <Form />
             <img src="/images/img-hero.svg" alt="hero" className="hero" />
           </Hero>
@@ -94,8 +94,7 @@ const SignIn = styled.a`
 `;
 
 const Section = styled.section`
-  border: 2px solid red;
-  display: flex;
+  // border: 2px solid red;
   align-content: start;
   min-height: 500px;
   padding-top: 40px;
@@ -105,17 +104,6 @@ const Section = styled.section`
   max-width: 1128px;
   align-items: center;
   margin: auto;
-  @media (max-width: 768px) {
-    margin: auto;
-    width: 100%;
-    min-height: 0px;
-  }
-`;
-
-const Hero = styled.div`
-  width: 100%;
-  position: relative;
-  border: 2px solid pink;
   h1 {
     padding-bottom: 0;
     width: 55%;
@@ -129,15 +117,27 @@ const Hero = styled.div`
       width: 100%;
       line-height: 2;
     }
+  @media (max-width: 768px) {
+    margin: auto;
+    width: 100%;
+    min-height: 0px;
+  }
+`;
+
+const Hero = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  // border: 2px solid pink;
   }
 
   .hero {
-    width: 500px;
-    height: 670px;
+    width: 600px;
+    height: 500px;
     position: absolute;
     // bottom: -50px;
     right: -50px;
-    // top: -10px;
+    top: 20px;
     @media (max-width: 768px) {
       top: 230px;
       width: 500px;

@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import StandardLink from "./StandardLink";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { categoryItem } from "../data";
+
+console.log(categoryItem);
 
 function Categories() {
   const [show, setShow] = useState(false);
+  const [count, setCount] = useState(categoryItem.length);
+  console.log(count);
+  const [items, setItems] = useState(categoryItem.slice(0, 8));
   return (
     <Container>
       <Section>
@@ -12,28 +18,20 @@ function Categories() {
         <Div>
           <p className="box-title">SUGGESTED SEARCHES</p>
           <List>
-            <StandardLink link={"Engineering"} />
-            <StandardLink link={"Business Development"} />
-            <StandardLink link={"Administrative Assistant"} />
-            <StandardLink link={"Retail Associate"} />
-            <StandardLink link={"Customer Service"} />
-            <StandardLink link={"Operations"} />
-            <StandardLink link={"Information Technology"} />
-            <StandardLink link={"Marketing"} />
-            <StandardLink link={"Human Resource"} />
-            <StandardLink link={"Healthcare Services"} />
-            <StandardLink link={"Program and Project Management"} />
-            {show && <StandardLink link={"Sales"} />}
-            {show && <StandardLink link={"Accounting"} />}
-            {show && <StandardLink link={"Consulting"} />}
-            {show && <StandardLink link={"Education"} />}
-            {show && <StandardLink link={"Arts and Design"} />}
-            {show && <StandardLink link={"Entrepreneurship"} />}
-            {show && <StandardLink link={"Community and Social Services"} />}
-            {show && <StandardLink link={"Media and Communications"} />}
+            {items.map((item, itemIndex) => {
+              return <StandardLink link={item} key={itemIndex} />;
+            })}
             <button
               className={`toggle-btn ${show && "btn-shift"}`}
-              onClick={() => setShow(!show)}
+              onClick={() => {
+                if (!show) {
+                  setItems(categoryItem.slice(0, count));
+                  setShow(!show);
+                } else {
+                  setItems(categoryItem.slice(0, 8));
+                  setShow(!show);
+                }
+              }}
             >
               {show ? (
                 <p>
