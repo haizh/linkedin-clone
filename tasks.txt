@@ -1,0 +1,4 @@
+pending task
+
+1. Disable button on click functionality for carousel slider
+2. create two container components, one for full width, and one for max 1124px
