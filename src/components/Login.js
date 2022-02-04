@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Form from "./Form";
 import Categories from "./Categories";
 import ActionArea from "./ActionArea";
+import Video from "./Video";
 import Lazy from "./Lazy";
 import { Footer } from "./Footer";
 const Carousel = lazy(() => import("./Carousel"));
@@ -33,6 +34,7 @@ function Login() {
         <Carousel />
       </Suspense>
       <ActionArea />
+      <Video></Video>
       <Footer />
     </>
   );
