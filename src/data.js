@@ -91,3 +91,15 @@ export const directories = [
   "Products",
   "Content Topics",
 ];
+
+export const bottom = [
+  "About",
+  "Accessibility",
+  "User Agreement",
+  "Privacy Policy",
+  "Cookie Policy",
+  "Copyright Policy",
+  "Brand Policy",
+  "Guest Controls",
+  "Community Guidelines",
+];
