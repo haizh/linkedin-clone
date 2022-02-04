@@ -4,6 +4,7 @@ import Form from "./Form";
 import Categories from "./Categories";
 import ActionArea from "./ActionArea";
 import Lazy from "./Lazy";
+import { Footer } from "./Footer";
 const Carousel = lazy(() => import("./Carousel"));
 
 function Login() {
@@ -32,6 +33,7 @@ function Login() {
         <Carousel />
       </Suspense>
       <ActionArea />
+      <Footer />
     </>
   );
 }

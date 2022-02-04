@@ -52,7 +52,7 @@ const Carousel = () => {
             carouselIndex === index - 1 ||
             (index === 0 && carouselIndex === data.length - 1)
           ) {
-            position = "last-slide";
+            position = "prev-slide";
           }
           //code explaination. the first consition makes sure that the first array item gets the active class
           //the OR condition, for the first block ansure that array items greater than zero would
@@ -140,7 +140,7 @@ const Section = styled.section`
     right: 20px;
   }
 
-  .last-slide {
+  .prev-slide {
     transform: translateX(-100%);
   }
   .next-slide {
