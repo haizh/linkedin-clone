@@ -134,9 +134,9 @@ const Buttons = styled.button`
   }
 
   .google-sign-in {
-    position: absolute;
-    left: 70px;
-    top: 10px;
+    position: relative;
+    left: -10px;
+    top: 5px;
   }
 
   @media (max-width: 768px) {
