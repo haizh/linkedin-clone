@@ -34,7 +34,13 @@ const FormInput = styled.div`
   width: 500px;
   margin-top: 20px;
   flex-direction: column;
-  // border: 2px solid green;
+
+  @media (max-width: 768px) {
+    width: 1124px;
+    overflow: hidden;
+    align-items: center;
+    padding: 0 15px;
+  }
 
   & > input {
     max-width: 400px;
@@ -48,6 +54,11 @@ const FormInput = styled.div`
     border-radius: 2px;
     font-size: 1.6rem;
     line-height: 1.5;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+
+    }
   }
 
   input:focus {
@@ -87,15 +98,14 @@ const FormInput = styled.div`
     text-decoration: none;
     color: gray;
     margin: 20px 0;
+
+    @media (max-width: 768px) {
+      align-self: flex-start;
   }
 
   a:hover {
     color: blue;
     text-decoration: underline;
-  }
-
-  @media (max-width: 768px) {
-    align-items: center;
   }
 `;
 
@@ -127,6 +137,10 @@ const Buttons = styled.button`
     position: absolute;
     left: 70px;
     top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
 

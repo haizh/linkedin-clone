@@ -26,13 +26,10 @@ const FooterBottom = styled.div`
   max-width: 1024px;
   justify-content: space-between;
   background-color: white;
+  flex-wrap: wrap;
 
   .logo {
-    width: 70%;
-    // height: 34px;
-    @media (max-width: 768px) {
-      padding: 0 5px;
-    }
+    width: 70px;
   }
 
   a {
@@ -45,6 +42,15 @@ const FooterBottom = styled.div`
     text-decoration: underline;
     transition: all linear 190ms;
     color: #0073b1;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    a {
+      margin-left: 10px;
+      padding: 0.2rem 0;
+    }
   }
 `;
 export default Bottom;

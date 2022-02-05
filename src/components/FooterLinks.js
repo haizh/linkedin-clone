@@ -31,10 +31,14 @@ const Container = styled.section`
   display: flex;
   background-color: snow;
   justify-content: space-around;
-  //   border: 2px solid red;
+  padding: 2rem 0;
 
   .img-div {
     padding-top: 0.5rem;
+
+    @media (max-width: 768px) {
+      padding-left: 2.5rem;
+    }
   }
   .logo {
     width: 90px;
@@ -43,12 +47,10 @@ const Container = styled.section`
       padding: 0 5px;
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
-// const Bottom = styled.div`
-//   display: flex;
-//   margin: auto;
-//   max-width: 1124px;
-//   justify-content: space-between;
-// `;
 
 export default FooterLinks;

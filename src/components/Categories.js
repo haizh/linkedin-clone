@@ -14,36 +14,36 @@ function Categories() {
   return (
     <Container>
       <Section>
-        <h2>Find open jobs and internships</h2>
+        <h2>Explore topics you are interested in </h2>
         <Div>
           <p className="box-title">SUGGESTED SEARCHES</p>
           <List>
             {items.map((item, itemIndex) => {
               return <StandardLink link={item} key={itemIndex} />;
             })}
-            <button
-              className={`toggle-btn ${show && "btn-shift"}`}
-              onClick={() => {
-                if (!show) {
-                  setItems(categoryItem.slice(0, count));
-                  setShow(!show);
-                } else {
-                  setItems(categoryItem.slice(0, 8));
-                  setShow(!show);
-                }
-              }}
-            >
-              {show ? (
-                <p>
-                  Show less <FiChevronDown />
-                </p>
-              ) : (
-                <p>
-                  Show more <FiChevronUp />
-                </p>
-              )}
-            </button>
           </List>
+          <button
+            className={`toggle-btn ${show && "btn-shift"}`}
+            onClick={() => {
+              if (!show) {
+                setItems(categoryItem.slice(0, count));
+                setShow(!show);
+              } else {
+                setItems(categoryItem.slice(0, 8));
+                setShow(!show);
+              }
+            }}
+          >
+            {show ? (
+              <p>
+                Show less <FiChevronDown />
+              </p>
+            ) : (
+              <p>
+                Show more <FiChevronUp />
+              </p>
+            )}
+          </button>
         </Div>
       </Section>
       <SubContainer>
@@ -76,21 +76,35 @@ const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-items: ${(props) => (props.primary ? "baseline" : "initial")};
-  padding: ${(props) => (props.primary ? "80px 0" : "200px 0px")};
+  padding: ${(props) => (props.primary ? "70px 0" : "120px 0px")};
 
   h2 {
     font-size: ${(props) => (props.primary ? "40px" : "48px")};
     color: ${(props) => (props.primary ? "#b24020" : "rgba(0, 0, 0, 0.9)")};
-    line-height: ${(props) => (props.primary ? "50px" : "60px")};
+    // line-height: ${(props) => (props.primary ? "50px" : "60px")};
     font-weight: ${(props) => (props.primary ? "400" : "200")};
     width: 35%;
     margin-right: 70px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 35px;
+      margin-left: 10px;
+      font-weight: 350;
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
   }
 `;
 
 const Div = styled.div`
   width: 600px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 
   .box-title {
     padding: 12px;
@@ -99,6 +113,18 @@ const Div = styled.div`
     font-size: 16px;
     color: rgba(0, 0, 0, 0.6);
   }
+
+  .toggle-btn {
+    color: rgba(0, 0, 0, 0.796);
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    background: transparent;
+  }
 `;
 
 const List = styled.div`
@@ -106,22 +132,6 @@ const List = styled.div`
   flex-wrap: wrap;
   align-content: flex-start;
   position: relative;
-
-  .toggle-btn {
-    position: absolute;
-    top: 20rem;
-    left: 15px;
-    color: rgba(0, 0, 0, 0.796);
-    line-height: 40px;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn-shift {
-    top: 32rem;
-  }
 `;
 
 export default Categories;

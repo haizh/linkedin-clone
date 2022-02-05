@@ -49,6 +49,11 @@ const Container = styled.section`
     font-size: 2.5rem;
     padding: 0 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    background: ghostwhite;
+  }
 `;
 
 export default Video;

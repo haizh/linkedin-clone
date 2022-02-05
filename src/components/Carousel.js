@@ -78,13 +78,13 @@ const Container = styled.div`
   padding: 0;
   height: auto;
   background-color: #faf9f7;
-  padding: 100px 0;
-  /* border: 2px solid khaki; */
+  padding: 80px 0;
+  // border: 2px solid khaki;
 `;
 
 const Section = styled.section`
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
   height: 500px;
   max-width: 1124px;
   position: relative;
@@ -113,6 +113,7 @@ const Section = styled.section`
     width: 100%;
     height: 100%;
     transition: all 0.3s linear;
+    // border: 2px solid red;
   }
 
   h2 {
@@ -153,20 +154,35 @@ const Section = styled.section`
   }
 
   @media (max-width: 768px) {
-    overflow: visible;
-    height: 880px;
+    height: 800px;
 
     h2 {
       width: 80%;
+      font-size: 35px;
     }
     p {
       width: 90%;
     }
     img {
+      max-width: 350px;
       top: 28rem;
       left: 0;
       display: block;
       margin: 0 auto;
+      right: 0;
+    }
+  }
+
+  @media (max-width: 445px) {
+    img {
+      width: 70%;
+      position: relative;
+      top: 3rem;
+    }
+
+    p {
+      font-size: 25px;
+      line-height: 30px;
     }
   }
 `;

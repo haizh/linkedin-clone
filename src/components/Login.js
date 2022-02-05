@@ -34,6 +34,7 @@ function Login() {
         <Carousel />
       </Suspense>
       <ActionArea />
+      //Have to implement lazy loading here
       <Video></Video>
       <Footer />
     </>
@@ -42,7 +43,6 @@ function Login() {
 
 const Container = styled.div`
   padding: 0px;
-  // border: 2px solid blue;
   width: 100%;
 `;
 const Nav = styled.nav`
@@ -54,12 +54,15 @@ const Nav = styled.nav`
   position: relative;
   justify-content: space-between;
   flex-wrap: nowrap;
+
   // max-width means any screen size below 768px, do the following
   .logo {
     width: 135px;
     height: 34px;
     @media (max-width: 768px) {
-      padding: 0 5px;
+      padding: 0px 5px;
+      width: 90px;
+      margin-top: 15px;
     }
   }
 `;
@@ -77,6 +80,9 @@ const Join = styled.a`
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+  }
 `;
 
 const SignIn = styled.a`
@@ -87,7 +93,7 @@ const SignIn = styled.a`
   font-size: 16px;
   font-weight: 600;
   line-height: 40px;
-  padding: 10px 24px;
+  padding: 6px 17px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
   &:hover {
@@ -112,14 +118,15 @@ const Section = styled.section`
     padding-bottom: 0;
     width: 55%;
     font-size: 56px;
-    color: #2977c9;
+    color: rgba(143, 88, 73, 1);
     font-weight: 200;
-    line-height: 70px;
+    // line-height: 70px;
+
     @media (max-width: 768px) {
-      text-align: center;
-      font-size: 25px;
+      text-align: left;
+      font-size: 2.3rem;
       width: 100%;
-      line-height: 2;
+      // line-height: 2;
     }
   @media (max-width: 768px) {
     margin: auto;
@@ -132,22 +139,29 @@ const Hero = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  // border: 2px solid pink;
   }
 
   .hero {
     width: 600px;
     height: 500px;
     position: absolute;
-    // bottom: -50px;
     right: -50px;
     top: 20px;
+
+
     @media (max-width: 768px) {
-      top: 230px;
-      width: 500px;
-      position: static;
+      //the three properties below is what make it possible to center the image
+      position: relative;
+      display: block;
+      margin: auto;
+      width: 280px;
       height: initial;
+      right: 0;
     }
+  }
+
+  @media(max-width:768px){
+    position: relative;
   }
 `;
 

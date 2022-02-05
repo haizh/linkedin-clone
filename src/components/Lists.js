@@ -23,7 +23,6 @@ function Lists({ props }) {
 
 const Div = styled.div`
   color: rgba(0, 0, 0, 0.9);
-  // border: 2px solid brown;
   margin: 0 3rem;
 
   li {
@@ -42,7 +41,7 @@ const Div = styled.div`
 
   .heading {
     font-weight: 500;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 `;
 
