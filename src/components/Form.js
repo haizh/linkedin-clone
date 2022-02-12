@@ -14,7 +14,12 @@ function Form() {
         id="name"
         placeholder="Email or phone number"
       />
-      <input type="password" name="" id="name" />
+      <input
+        type="password"
+        name=""
+        id="name"
+        placeholder="Email or phone number"
+      />
       <a href="#">Forgot Password?</a>
       <Buttons primary>Sign In</Buttons>
       <Buttons>
