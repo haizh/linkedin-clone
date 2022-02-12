@@ -19,8 +19,6 @@ export const data = [
     image: carouselThree,
   },
 ];
-<<<<<<< HEAD
-=======
 
 export const categoryItem = [
   "Engineering",
@@ -105,4 +103,3 @@ export const bottom = [
   "Guest Controls",
   "Community Guidelines",
 ];
->>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
