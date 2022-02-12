@@ -1,8 +1,8 @@
 {
+  "homepage": "https://elboj.github.io/linkedin-clone/",
   "name": "linkedin-clone",
   "version": "0.1.0",
-  "homepage": "https://elboj.github.io/linkedin-clone/",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
