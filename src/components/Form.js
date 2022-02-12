@@ -3,20 +3,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 function Form() {
-  const [show, setShow] = useState(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <FormInput onSubmit>
-      <input type="text" name="" id="" placeholder="Email or phone number" />
-      <input type="password" name="" id="" placeholder="password" />
-      <button
-        className="show-btn"
-        onClick={(e) => {
-          e.preventDefault();
-          setShow(!show);
-        }}
-      >
-        {show === true ? "Show" : "Hide"}
-      </button>
+    <FormInput onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name=""
+        id="name"
+        placeholder="Email or phone number"
+      />
+      <input type="password" name="" id="name" placeholder="password" />
       <a href="#">Forgot Password?</a>
       <Buttons primary>Sign In</Buttons>
       <Buttons>
@@ -37,6 +35,13 @@ const FormInput = styled.div`
   margin-top: 20px;
   flex-direction: column;
 
+  @media (max-width: 768px) {
+    width: 1124px;
+    overflow: hidden;
+    align-items: center;
+    padding: 0 15px;
+  }
+
   & > input {
     max-width: 400px;
     width: 100%;
@@ -49,6 +54,11 @@ const FormInput = styled.div`
     border-radius: 2px;
     font-size: 1.6rem;
     line-height: 1.5;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+
+    }
   }
 
   input:focus {
@@ -88,15 +98,14 @@ const FormInput = styled.div`
     text-decoration: none;
     color: gray;
     margin: 20px 0;
+
+    @media (max-width: 768px) {
+      align-self: flex-start;
   }
 
   a:hover {
     color: blue;
     text-decoration: underline;
-  }
-
-  @media (max-width: 768px) {
-    align-items: center;
   }
 `;
 
@@ -125,9 +134,13 @@ const Buttons = styled.button`
   }
 
   .google-sign-in {
-    position: absolute;
-    left: 70px;
-    top: 10px;
+    position: relative;
+    left: -10px;
+    top: 5px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
 

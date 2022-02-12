@@ -52,7 +52,11 @@ const Carousel = () => {
             carouselIndex === index - 1 ||
             (index === 0 && carouselIndex === data.length - 1)
           ) {
+<<<<<<< HEAD
             position = "last-slide";
+=======
+            position = "prev-slide";
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
           }
           //code explaination. the first consition makes sure that the first array item gets the active class
           //the OR condition, for the first block ansure that array items greater than zero would
@@ -78,13 +82,22 @@ const Container = styled.div`
   padding: 0;
   height: auto;
   background-color: #faf9f7;
+<<<<<<< HEAD
   padding: 100px 0;
   /* border: 2px solid khaki; */
+=======
+  padding: 80px 0;
+  // border: 2px solid khaki;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
 `;
 
 const Section = styled.section`
   margin: 0 auto;
+<<<<<<< HEAD
   width: 100vw;
+=======
+  width: 100%;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
   height: 500px;
   max-width: 1124px;
   position: relative;
@@ -113,6 +126,10 @@ const Section = styled.section`
     width: 100%;
     height: 100%;
     transition: all 0.3s linear;
+<<<<<<< HEAD
+=======
+    // border: 2px solid red;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
   }
 
   h2 {
@@ -140,7 +157,11 @@ const Section = styled.section`
     right: 20px;
   }
 
+<<<<<<< HEAD
   .last-slide {
+=======
+  .prev-slide {
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
     transform: translateX(-100%);
   }
   .next-slide {
@@ -153,20 +174,49 @@ const Section = styled.section`
   }
 
   @media (max-width: 768px) {
+<<<<<<< HEAD
     overflow: visible;
     height: 880px;
 
     h2 {
       width: 80%;
+=======
+    height: 800px;
+
+    h2 {
+      width: 80%;
+      font-size: 35px;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
     }
     p {
       width: 90%;
     }
     img {
+<<<<<<< HEAD
+=======
+      max-width: 350px;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
       top: 28rem;
       left: 0;
       display: block;
       margin: 0 auto;
+<<<<<<< HEAD
+=======
+      right: 0;
+    }
+  }
+
+  @media (max-width: 445px) {
+    img {
+      width: 70%;
+      position: relative;
+      top: 3rem;
+    }
+
+    p {
+      font-size: 25px;
+      line-height: 30px;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
     }
   }
 `;

@@ -54,6 +54,11 @@ const ActionCard = styled.div`
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+<<<<<<< HEAD
+=======
+    margin: 15px 0;
+    padding: 0 1rem;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
   }
   @media (max-width: 600px) {
     flex-direction: column;
@@ -71,6 +76,14 @@ const Div = styled.div`
     font-weight: 200;
     color: rgba(0, 0, 0, 0.9);
     padding-bottom: 3rem;
+<<<<<<< HEAD
+=======
+
+    @media (max-width: 768px) {
+      font-size: 35px;
+      line-height: 40px;
+    }
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
   }
 `;
 

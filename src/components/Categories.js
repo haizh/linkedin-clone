@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import StandardLink from "./StandardLink";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+<<<<<<< HEAD
 
 function Categories() {
   const [show, setShow] = useState(false);
@@ -46,6 +47,50 @@ function Categories() {
               )}
             </button>
           </List>
+=======
+import { categoryItem } from "../data";
+
+console.log(categoryItem);
+
+function Categories() {
+  const [show, setShow] = useState(false);
+  const [count, setCount] = useState(categoryItem.length);
+  console.log(count);
+  const [items, setItems] = useState(categoryItem.slice(0, 8));
+  return (
+    <Container>
+      <Section>
+        <h2>Explore topics you are interested in </h2>
+        <Div>
+          <p className="box-title">SUGGESTED SEARCHES</p>
+          <List>
+            {items.map((item, itemIndex) => {
+              return <StandardLink link={item} key={itemIndex} />;
+            })}
+          </List>
+          <button
+            className={`toggle-btn ${show && "btn-shift"}`}
+            onClick={() => {
+              if (!show) {
+                setItems(categoryItem.slice(0, count));
+                setShow(!show);
+              } else {
+                setItems(categoryItem.slice(0, 8));
+                setShow(!show);
+              }
+            }}
+          >
+            {show ? (
+              <p>
+                Show less <FiChevronDown />
+              </p>
+            ) : (
+              <p>
+                Show more <FiChevronUp />
+              </p>
+            )}
+          </button>
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
         </Div>
       </Section>
       <SubContainer>
@@ -78,21 +123,49 @@ const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-items: ${(props) => (props.primary ? "baseline" : "initial")};
+<<<<<<< HEAD
   padding: ${(props) => (props.primary ? "80px 0" : "200px 0px")};
+=======
+  padding: ${(props) => (props.primary ? "70px 0" : "120px 0px")};
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
 
   h2 {
     font-size: ${(props) => (props.primary ? "40px" : "48px")};
     color: ${(props) => (props.primary ? "#b24020" : "rgba(0, 0, 0, 0.9)")};
+<<<<<<< HEAD
     line-height: ${(props) => (props.primary ? "50px" : "60px")};
     font-weight: ${(props) => (props.primary ? "400" : "200")};
     width: 35%;
     margin-right: 70px;
+=======
+    // line-height: ${(props) => (props.primary ? "50px" : "60px")};
+    font-weight: ${(props) => (props.primary ? "400" : "200")};
+    width: 35%;
+    margin-right: 70px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 35px;
+      margin-left: 10px;
+      font-weight: 350;
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
   }
 `;
 
 const Div = styled.div`
   width: 600px;
   flex-grow: 1;
+<<<<<<< HEAD
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
 
   .box-title {
     padding: 12px;
@@ -101,6 +174,21 @@ const Div = styled.div`
     font-size: 16px;
     color: rgba(0, 0, 0, 0.6);
   }
+<<<<<<< HEAD
+=======
+
+  .toggle-btn {
+    color: rgba(0, 0, 0, 0.796);
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    background: transparent;
+  }
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
 `;
 
 const List = styled.div`
@@ -108,6 +196,7 @@ const List = styled.div`
   flex-wrap: wrap;
   align-content: flex-start;
   position: relative;
+<<<<<<< HEAD
 
   .toggle-btn {
     position: absolute;
@@ -124,6 +213,8 @@ const List = styled.div`
   .btn-shift {
     top: 32rem;
   }
+=======
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
 `;
 
 export default Categories;

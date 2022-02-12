@@ -19,3 +19,90 @@ export const data = [
     image: carouselThree,
   },
 ];
+<<<<<<< HEAD
+=======
+
+export const categoryItem = [
+  "Engineering",
+  "Business Development",
+  "Administrative Assistant",
+  "Retail Associate",
+  "Customer Service",
+  "Operations",
+  "Information Technology",
+  "Marketing",
+  "Human Resource",
+  "Healthcare Services",
+  "Program and Project Management",
+  "Sales",
+  "Accounting",
+  "Consulting",
+  "Education",
+  "Arts and Design",
+  "Entrepreneurship",
+  "Community and Social Services",
+  "Media and Communications",
+];
+
+export const general = [
+  "General",
+  "Sign Up",
+  "Help Center",
+  "About",
+  "Press",
+  "Blog",
+  "Careers",
+  "Developers",
+];
+
+export const browse = [
+  "Browse LinkedIn",
+  "Learning",
+  "Jobs",
+  "Salary",
+  "Mobile",
+  "Services",
+  "Products",
+];
+
+const business = [
+  "Business Solutions",
+  "Talent",
+  "Marketing",
+  "Sales",
+  "Learning",
+];
+
+export default business;
+
+export const directories = [
+  "Directories",
+  "Members",
+  "Jobs",
+  "Companies",
+  "Salaries",
+  "Featured",
+  "Learning",
+  "Posts",
+  "Articles",
+  "Schools",
+  "News",
+  "News Letters",
+  "Services",
+  "Interview Prep",
+  "Products",
+  "Content Topics",
+];
+
+export const bottom = [
+  "About",
+  "Accessibility",
+  "User Agreement",
+  "Privacy Policy",
+  "Cookie Policy",
+  "Copyright Policy",
+  "Brand Policy",
+  "Guest Controls",
+  "Community Guidelines",
+];
+>>>>>>> 52f984351d7309dac6cd9725717094540cc7479f
