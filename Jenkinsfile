@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat 'npm run build'
-                bat 'forever start'
+                bat 'forever start index.js'
             }
         }
     }
