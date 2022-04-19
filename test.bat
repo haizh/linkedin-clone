@@ -1,0 +1,5 @@
+echo "testing main branch"
+echo "testing ..."
+echo "passed stage one"
+echo "passed stage two"
+echo "test complete"
