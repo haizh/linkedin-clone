@@ -18,6 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat 'npm run buid'
+                bat 'npm start'
             }
         }
     }
