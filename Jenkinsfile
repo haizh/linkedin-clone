@@ -10,14 +10,14 @@ pipeline {
         
         stage('Test') {
             steps {
-                bat 'test.bat'
+                bat 'node test'
             }
         }
         
         stage('Deploy') {
             steps {
                 bat 'npm run build'
-                bat 'forever start index.js'
+                bat 'npm install'
             }
         }
     }
