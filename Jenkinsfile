@@ -21,6 +21,7 @@ pipeline {
             steps {
                 bat 'npm run build'
                 bat 'npm start'
+                bat 'kill.bat'
             }
         }
     }
