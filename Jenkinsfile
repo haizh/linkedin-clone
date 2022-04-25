@@ -1,5 +1,6 @@
 pipeline {
     agent {label "windows"}
+    tools {nodejs "node"}
     /*agent any*/
     
     stages {
