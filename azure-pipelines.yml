@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  abolusBU
+  name: abolusBU
 
 steps:
 - task: NodeTool@0
