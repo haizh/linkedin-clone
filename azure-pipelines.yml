@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  abolusBU
 
 steps:
 - task: NodeTool@0
